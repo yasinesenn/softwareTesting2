@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  django:
+    build:
+      context: ./
+    restart: always
+    hostname: django
+    ports:
+      - "8000:3000"
+    depends_on: 
+      - db
+    links:
+    - db:db
+    environment:
+      DATABASE: postgres
+      SQL_HOST: softwareTesting2
+      SQL_PORT: 5432
+      SQL_DATABASE: mydb
+      SQL_USER: postgres
+      SQL_PASSWORD: Yasin.emin.15
+    networks:
+      - djangonetwork
+  db:
+    image: postgres:latest
+    restart: always
+    hostname: softwareTesting2
+    ports:
+      - "5432:5432"
+    environment: 
+      POSTGRES_HOST: softwareTesting2
+      POSTGRES_DB: mydb
+      POSTGRES_PASSWORD: Yasin.emin.15
+      POSTGRES_USER: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d mydb"]
+      interval: 5s
+      retries: 5
+      timeout: 5s
+    networks:
+      - djangonetwork
+networks:
+  djangonetwork:
+    driver: bridge
+

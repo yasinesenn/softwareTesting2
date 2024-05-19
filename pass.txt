@@ -1,0 +1,5 @@
+superUser:
+
+Username: yasin 
+Password: Yasin.Emin.15 
+Email: yasin.esen2@ogr.sakarya.edu.tr

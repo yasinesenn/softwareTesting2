@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block slider %}
+<section class="page-title page-title-layout10 text-center bg-overlay bg-overlay-gradient bg-parallax">
+    <div class="bg-img"><img src="assets/images/page-titles/9.jpg" alt="background"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 offset-xl-3">
+          <h1 class="pagetitle__heading">{{industry.name}}</h1>
+          <p class="pagetitle__desc">{{industry.title}}
+          </p>
+          <a href="about-us.html" class="btn btn__primary btn__primary-style2">
+            <span>Get Started</span> <i class="icon-arrow-right"></i>
+          </a>
+        </div><!-- /.col-xl-6 -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section><!-- /.page-title -->
+{% endblock slider %}
+
+
+
+
+
+{% block content %}
+
+  <!-- ======================
+    Features Layout 3
+    ========================= -->
+    <section id="overview" class="features-layout3 pt-130 pb-130">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-7 col-xl-6">
+              <div class="heading heading-layout2 mb-50">
+                <h2 class="heading__subtitle">{{ industry.name }}</h2>
+                <h3 class="heading__title"> {{ industry.title }}
+                </h3>
+                <p class="heading__desc mb-30">{{ industry.description }}
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <!-- Feature item #1 -->
+                  <div class="feature-item">
+                    <div class="feature__icon">
+                      <i class="icon-statistic"></i>
+                    </div>
+                    <h4 class="feature__title">Software Asset Management</h4>
+                    <p class="feature__desc">Extend proven Tech best practices to HR, finance, and other service delivery
+                      areas.</p>
+                    <a href="#" class="btn__link">
+                      <i class="icon-arrow-right icon-outlined"></i>
+                      <span>Read More</span>
+                    </a>
+                  </div><!-- /.feature-item -->
+                  <!-- Feature item #2 -->
+                  <div class="feature-item">
+                    <div class="feature__icon">
+                      <i class="icon-software"></i>
+                    </div>
+                    <h4 class="feature__title">Software License Management</h4>
+                    <p class="feature__desc">Build dynamic request templates with associated workflows, and tasks.</p>
+                    <a href="#" class="btn__link">
+                      <i class="icon-arrow-right icon-outlined"></i>
+                      <span>Read More</span>
+                    </a>
+                  </div><!-- /.feature-item -->
+                  <!-- Feature item #3 -->
+                  <div class="feature-item">
+                    <div class="feature__icon">
+                      <i class="icon-website"></i>
+                    </div>
+                    <h4 class="feature__title">Knowledge Base & Live Chat</h4>
+                    <p class="feature__desc">Build dynamic request templates with associated workflows, and tasks.</p>
+                    <a href="#" class="btn__link">
+                      <i class="icon-arrow-right icon-outlined"></i>
+                      <span>Read More</span>
+                    </a>
+                  </div><!-- /.feature-item -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-sm-6 col-md-6">
+                  <!-- Feature item #4 -->
+                  <div class="feature-item">
+                    <div class="feature__icon">
+                      <i class="icon-management"></i>
+                    </div>
+                    <h4 class="feature__title">Privileged Access Management</h4>
+                    <p class="feature__desc">Extend proven Tech best practices to HR, finance, and other service delivery
+                      areas.</p>
+                    <a href="#" class="btn__link">
+                      <i class="icon-arrow-right icon-outlined"></i>
+                      <span>Read More</span>
+                    </a>
+                  </div><!-- /.feature-item -->
+                  <!-- Feature item #5 -->
+                  <div class="feature-item">
+                    <div class="feature__icon">
+                      <i class="icon-relational"></i>
+                    </div>
+                    <h4 class="feature__title">Enterprise Service Management</h4>
+                    <p class="feature__desc">Our technology allows you to offer the latest software to your possible
+                      customers!
+                    </p>
+                    <a href="#" class="btn__link">
+                      <i class="icon-arrow-right icon-outlined"></i>
+                      <span>Read More</span>
+                    </a>
+                  </div><!-- /.feature-item -->
+                  <!-- Feature item #6 -->
+                  <div class="feature-item">
+                    <div class="feature__icon">
+                      <i class="icon-Primary"></i>
+                    </div>
+                    <h4 class="feature__title">Custom Request Templates</h4>
+                    <p class="feature__desc">Our technology allows you to offer the latest software to your possible
+                      customers!
+                    </p>
+                    <a href="#" class="btn__link">
+                      <i class="icon-arrow-right icon-outlined"></i>
+                      <span>Read More</span>
+                    </a>
+                  </div><!-- /.feature-item -->
+                </div><!-- /.col-lg-6 -->
+              </div><!-- /.row -->
+              <div class="row">
+                <div class="col-12">
+                  <div class="cta-banner mt-50 mb-30 d-flex flex-wrap align-items-center">
+                    <h4 class="cta__title pr-30">If you have any questions or need help, feel free to contact with
+                      our
+                      team, or you can call us any time <a href="tel:00201061245741">(002) 01061245741</a>
+                    </h4>
+                    <a href="#" class="btn btn__primary">Contact Us</a>
+                  </div><!-- /.cta-banner -->
+                </div><!-- /.col-12 -->
+              </div><!-- /.row -->
+            </div><!-- /.col-xl-5 -->
+            <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5 offset-xl-1">
+              <div class="sticky-top">
+                <img src="{{ industry.image.url }}" alt="banner">
+              </div>
+            </div><!-- /col-lg-5 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.Features Layout 3 -->
+
+
+{% endblock content %}

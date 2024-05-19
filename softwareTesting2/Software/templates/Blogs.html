@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  slider %}
+<section class="page-title page-title-layout14 bg-overlay bg-overlay-gradient bg-parallax text-center">
+    <div class="bg-img"><img src="{% static 'assets/images/page-titles/14.jpg' %}" alt="background"></div>    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="pagetitle__heading">Our Blog</h1>
+          <nav>
+            <ol class="breadcrumb justify-content-center mb-0 mt-80">
+              <li class="breadcrumb-item"><a href="/index">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Blog</li>
+            </ol>
+          </nav>
+        </div><!-- /.col-lg-12 -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section><!-- /.page-title -->
+{% endblock  %}
+{% block content %}
+<section class="blog-grid">
+    <div class="container">
+        <div class="row">
+            {% for post in blog_posts %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="post-item">
+                    <div class="post__img">
+                        <a href="{% url 'blog_detail' post.id %}">
+                            
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                        </a>
+                    </div>
+                    <div class="post__body">
+                        <div class="post__meta-cat">
+                            {% for category in post.categories.all %}
+                            <a href="#">{{ category.name }}</a>
+                            {% endfor %}
+                        </div>
+                        <h4 class="post__title"><a href="{% url 'blog_detail' post.id %}">{{ post.title }}</a></h4>
+                        
+                        <div class="post__meta">
+                            <span class="post__meta-date">{{ post.date_posted }}</span>
+                        </div>
+                        <p class="post__desc">{{ post.content|truncatechars:100 }}</p>
+                        <a href="{% url 'blog_detail' post.id %}" class="btn btn__secondary btn__link">
+                            
+                            <span>Read More</span>
+                            <i class="icon-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
